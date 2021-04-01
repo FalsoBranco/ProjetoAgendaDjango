@@ -25,7 +25,7 @@ SECRET_KEY = "p0b!5$=a-+oj*p4a_)tj8h6=iq6no%i9c3=44(qasvc(+mr)_d"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "contatos",
+    "contatos.apps.ContatosConfig",
 ]
 
 MIDDLEWARE = [
@@ -74,10 +74,20 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "agenda",
+        "USER": "admin",
+        "PASSWORD": "root",
+        "HOST": "mysqldb",  # Or an IP Address that your DB is hosted on
+        "PORT": "3306",
     }
 }
 
