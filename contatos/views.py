@@ -1,6 +1,5 @@
 from django.http.request import HttpRequest
-from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Contato
 
@@ -15,5 +14,5 @@ def index(request):
 
 
 def ver_contato(request: HttpRequest, contato_id: int):
-    contato = Contato.objects.get(id=contato_id)
+    contato = get_object_or_404(Contato, id=contato_id)
     return render(request, "contatos/ver_contato.html", {"contato": contato})
