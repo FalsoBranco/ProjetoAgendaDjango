@@ -9,9 +9,26 @@ from .models import Categoria, Contato
 
 @admin.register(Contato)
 class ContatoAdmin(admin.ModelAdmin):
-    pass
-    
+    """Admin View for Contato"""
+
+    list_display_links = (
+        "id",
+        "nome",
+    )
+    list_display = (
+        "id",
+        "nome",
+        "sobrenome",
+        "telefone",
+        "categoria",
+        "mostrar",
+    )
+    # list_filter = ("categoria",)
+    list_editable = ("telefone", "mostrar")
+    search_fields = ("telefone", "id", "nome", "sobrenome")
+    ordering = ("-data_criacao",)
+
+
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
     pass
-

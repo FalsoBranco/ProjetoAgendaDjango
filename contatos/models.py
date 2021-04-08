@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import CharField
 
 # Create your models here.
 
@@ -25,6 +26,7 @@ class Contato(models.Model):
         verbose_name="categoria contato",
         on_delete=models.DO_NOTHING,
     )
+    mostrar = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "contato"
