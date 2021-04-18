@@ -130,3 +130,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "templates/static"]
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = BASE_DIR / "media"  # pasta das imagens/videos e
+MEDIA_URL = "/media/"  # URL das imagens

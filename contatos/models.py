@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import CharField
 
 # Create your models here.
 
@@ -27,6 +26,7 @@ class Contato(models.Model):
         on_delete=models.DO_NOTHING,
     )
     mostrar = models.BooleanField(default=True)
+    foto = models.ImageField(blank=True, upload_to="fotos/%Y/%m/%d")
 
     class Meta:
         verbose_name = "contato"
