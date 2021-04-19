@@ -135,3 +135,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = BASE_DIR / "media"  # pasta das imagens/videos e
 MEDIA_URL = "/media/"  # URL das imagens
+
+
+# custom mensagens
+
+# importa mensagens do proprio django
+# eu sei, esta errado pela pep8
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.ERROR: "alert-danger",
+    constants.WARNING: "alert-warning",
+    constants.SUCCESS: "alert-success",
+    constants.DEBUG: "alert-primary",
+    constants.INFO: " alert-info",
+}
