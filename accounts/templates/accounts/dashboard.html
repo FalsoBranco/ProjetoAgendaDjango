@@ -1,3 +1,13 @@
 {% extends 'base.html' %}
 
-{% block 'conteudo' %}dash{% endblock 'conteudo' %}
+{% block 'conteudo' %}
+<h1>DashBoard</h1>
+{% include 'parciais/_messages.html' %}
+
+
+<h1 class="mt-3 mb-3">ola {{user.first_name}}</h1>
+
+
+
+
+{% endblock 'conteudo' %}
